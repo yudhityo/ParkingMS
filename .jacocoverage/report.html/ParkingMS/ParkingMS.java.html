@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ParkingMS.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;ParkingMS&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">ParkingMS</a> &gt; <span class="el_source">ParkingMS.java</span></div><h1>ParkingMS.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ParkingMS;
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author fadhilmda-PC
+ */
+public class ParkingMS {
+
+    public double timeIn, timeOut, duration, price, res;
+<span class="fc" id="L18">    double x = 5.00;</span>
+<span class="fc" id="L19">    double y = 4.00;</span>
+<span class="fc" id="L20">    double z = 3.00;</span>
+
+<span class="fc" id="L22">    ParkingMS(double in, double out) {</span>
+<span class="fc" id="L23">        timeIn = in;</span>
+<span class="fc" id="L24">        timeOut = out;</span>
+<span class="fc" id="L25">    }</span>
+
+    public double Calculate() {
+<span class="fc" id="L28">        duration = timeOut - timeIn;</span>
+
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (duration &lt;= 1) {</span>
+<span class="fc" id="L31">            price = x;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        } else if (duration &lt;= 2) {</span>
+<span class="fc" id="L33">            price = x + y;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        } else if (duration &gt; 3) {</span>
+<span class="fc" id="L35">            res = duration - 3;</span>
+<span class="fc" id="L36">            duration = res * z;</span>
+<span class="fc" id="L37">            price = x + y + duration;</span>
+
+<span class="fc" id="L39">            DecimalFormat df = new DecimalFormat(&quot;0.00&quot;);</span>
+
+<span class="fc" id="L41">            JOptionPane.showMessageDialog(null, &quot;Price: RM&quot; + df.format(price));</span>
+        } 
+<span class="fc" id="L43">        return price;</span>
+    }
+
+    public static void main(String[] args) {
+<span class="fc" id="L47">        ParkingMS calc = new ParkingMS(9.00, 15.00);</span>
+<span class="fc" id="L48">        calc.Calculate();</span>
+
+<span class="fc" id="L50">        ParkingMS calc2 = new ParkingMS(13.00, 15.00);</span>
+<span class="fc" id="L51">        calc2.Calculate();</span>
+
+<span class="fc" id="L53">        ParkingMS calc3 = new ParkingMS(15.00, 15.00);</span>
+<span class="fc" id="L54">        calc3.Calculate();</span>
+
+<span class="fc" id="L56">        ParkingMS calc4 = new ParkingMS(15.00, 18.00);</span>
+<span class="fc" id="L57">        calc4.Calculate();</span>
+<span class="fc" id="L58">    }</span>
+
+    //getter setter
+//    public double getTimeIn() {
+//        return timeIn;
+//    }
+//
+//    public void setTimeIn(double timeIn) {
+//        this.timeIn = timeIn;
+//    }
+//
+//    public double getTimeOut() {
+//        return timeOut;
+//    }
+//
+//    public void setTimeOut(double timeOut) {
+//        this.timeOut = timeOut;
+//    }
+//
+//    public double getDuration() {
+//        return duration;
+//    }
+//
+//    public void setDuration(double duration) {
+//        this.duration = duration;
+//    }
+//
+//    public double getPrice() {
+//        return price;
+//    }
+//
+//    public void setPrice(double price) {
+//        this.price = price;
+//    }
+//
+//    public double getRes() {
+//        return res;
+//    }
+//
+//    public void setRes(double res) {
+//        this.res = res;
+//    }
+//
+//    public double getX() {
+//        return x;
+//    }
+//
+//    public void setX(double x) {
+//        this.x = x;
+//    }
+//
+//    public double getY() {
+//        return y;
+//    }
+//
+//    public void setY(double y) {
+//        this.y = y;
+//    }
+//
+//    public double getZ() {
+//        return z;
+//    }
+//
+//    public void setZ(double z) {
+//        this.z = z;
+//    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
